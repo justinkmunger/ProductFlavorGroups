@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.justintomobile.productflavorgroups"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "brand", "cost", "environment"
+
+    productFlavors {
+        supr {
+            dimension "brand"
+        }
+
+        amazng {
+            dimension "brand"
+        }
+
+        wondrful {
+            dimension "brand"
+        }
+
+        free {
+            dimension "cost"
+        }
+
+        paid {
+            dimension "cost"
+        }
+
+        dev {
+            dimension "environment"
+        }
+
+        qa {
+            dimension "environment"
+        }
+
+        stage {
+            dimension "environment"
+        }
+
+        prod {
+            dimension "environment"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.1.1'
+}
